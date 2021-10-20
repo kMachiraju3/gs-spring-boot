@@ -23,20 +23,10 @@ public class HelloController {
 	public String xkcd() {
 		return "xkcd";
 	}
-}
 
-// var comic
-//comic.month+comic.day +comic.year = MMDDYYYY
-//{
-//"month": "10", 
-//"num": 2530, 
-//"link": "", 
-//"year": "2021", 
-//"news": "", 
-//"safe_title": "Clinical Trials", 
-//"transcript": "", 
-//"alt": "We don't need to do a clinical trial of this change because the standard of care is to adopt new ideas without doing clinical trials.", 
-//"img": "https://imgs.xkcd.com/comics/clinical_trials.png", 
-//"title": "Clinical Trials", 
-//"day": "18"
-//}
+	@GetMapping("/xkcdSpec")
+	public String xkcdSpecific(@RequestParam(name="id", required=true) String id, Model model) {
+		model.addAttribute("id", id);
+		return "xkcdSpecific";
+	}
+}
