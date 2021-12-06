@@ -39,7 +39,7 @@ public class HelloController {
 	String currentdate= formatter.format(Todaydate); 
 
 
-	@GetMapping("/nasa")
+	@GetMapping("/nasaapod")
 	public String nasaApod(@RequestParam(name="date", required=false) String date, Model model) {
 		if(date == null){
 			date = currentdate;
